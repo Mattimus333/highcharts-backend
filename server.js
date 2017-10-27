@@ -4,10 +4,11 @@ const app = express()
 const knex = require('./knex')
 
 app.get('/data', function (req, res) {
-  return knex('totals').select('*')
-  .then((data) => {
-    return res.status(200).send(data);
-  })
+  res.send('hello')
+  // return knex('totals').select('*')
+  // .then((data) => {
+  //   return res.status(200).send(data);
+  // })
 })
 
 app.listen(3000, function () {
