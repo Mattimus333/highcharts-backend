@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       equities: 401030,
       fx: 15266300,
       fxoptions: 2147600,
-      swaps: 46830,
+      swaps: 96830,
     });
   })
   .then(() => {
