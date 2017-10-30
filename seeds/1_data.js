@@ -3,10 +3,10 @@ exports.seed = function (knex, Promise) {
   .then(() => {
     return knex('totals').insert({
       bond: 5606300,
-      equities: 401030,
+      equities: 801030,
       fx: 15266300,
       fxoptions: 2147600,
-      swaps: 116830,
+      swaps: 1116830,
     });
   })
   .then(() => {
