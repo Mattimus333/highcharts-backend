@@ -11,7 +11,8 @@ app.use(function(req, res, next) {
 app.get('/data', function (req, res) {
   return knex('totals').select('*')
   .then((data) => {
-    return res.status(200).send(data);
+    delete data[0].id;
+    return res.status(200).send(data[0]);
   })
 })
 
