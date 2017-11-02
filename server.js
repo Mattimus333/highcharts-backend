@@ -12,7 +12,7 @@ app.get('/data', function (req, res) {
   return knex('totals').select('*')
   .then((data) => {
     delete data[0].id;
-    return res.status(200).send(results);
+    return res.status(200).send(data);
   })
 })
 
