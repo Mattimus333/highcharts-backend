@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const knex = require('./knex')
+var json2csv = require('json2csv');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -12,7 +13,10 @@ app.get('/data', function (req, res) {
   return knex('totals').select('*')
   .then((data) => {
     delete data[0].id;
-    return res.status(200).send(data);
+    // var fields = ["bond","equities","fx","fxoptions","swaps"]
+    let results = '"name","number"\n"bond",5606300\n"equities",401030\n"fx",15266300\n"fxoptions",2147600\n"swaps",468300\n'
+    // var result = json2csv({ data: data, fields: fields});
+    return res.status(200).send(results);
   })
 })
 
