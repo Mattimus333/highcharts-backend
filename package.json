@@ -12,6 +12,7 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "express": "^4.16.2",
+    "json2csv": "^3.11.5",
     "knex": "^0.13.0",
     "pg": "^7.3.0"
   }
