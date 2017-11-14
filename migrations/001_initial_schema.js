@@ -1,17 +1,17 @@
 exports.up = function (knex) {
   return knex.schema.createTable('data', (table) => {
     table.increments();
-    table.string('Product').notNullable().defaultTo('');
-    table.string('Region').notNullable().defaultTo('');
-    table.string('Sector').notNullable().defaultTo('');
-    table.string('Currency').notNullable().defaultTo('');
-    table.string('Ticker').notNullable().defaultTo('');
-    table.string('Price').notNullable().defaultTo('');
-    table.string('Quanity').notNullable().defaultTo('');
-    table.string('COST').notNullable().defaultTo('');
-    table.string('NAV').notNullable().defaultTo('');
-    table.string('PNL').notNullable().defaultTo('');
-    table.string('Benchmark').notNullable().defaultTo('');
+    table.string('product').notNullable().defaultTo('');
+    table.string('region').notNullable().defaultTo('');
+    table.string('sector').notNullable().defaultTo('');
+    table.string('currency').notNullable().defaultTo('');
+    table.string('ticker').notNullable().defaultTo('');
+    table.integer('price').notNullable().defaultTo(0);
+    table.integer('quanity').notNullable().defaultTo(0);
+    table.integer('cost').notNullable().defaultTo(0);
+    table.integer('nav').notNullable().defaultTo(0);
+    table.integer('pnl').notNullable().defaultTo(0);
+    table.integer('benchmark').notNullable().defaultTo(0);
   });
 };
 
