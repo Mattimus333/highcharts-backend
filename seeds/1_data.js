@@ -1,15 +1,11 @@
+const data = require('../dataArray');
+console.log(data);
 exports.seed = function (knex, Promise) {
-  return knex('totals').del()
+  return knex('data').del()
   .then(() => {
-    return knex('totals').insert({
-      bond: 5606300,
-      equities: 801030,
-      fx: 15266300,
-      fxoptions: 2147600,
-      swaps: 1116830,
-    });
+    return knex('data').insert(data);
   })
   .then(() => {
-    return knex.raw("SELECT setval('totals_id_seq', (SELECT MAX(id) FROM totals));");
+    return knex.raw("SELECT setval('data_id_seq', (SELECT MAX(id) FROM data));");
   });
 };

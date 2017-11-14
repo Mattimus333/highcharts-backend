@@ -1,14 +1,20 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('totals', (table) => {
+  return knex.schema.createTable('data', (table) => {
     table.increments();
-    table.integer('bond').notNullable().defaultTo(0);
-    table.integer('equities').notNullable().defaultTo(0);
-    table.integer('fx').notNullable().defaultTo(0);
-    table.integer('fxoptions').notNullable().defaultTo(0);
-    table.integer('swaps').notNullable().defaultTo(0);
+    table.string('Product').notNullable().defaultTo('');
+    table.string('Region').notNullable().defaultTo('');
+    table.string('Sector').notNullable().defaultTo('');
+    table.string('Currency').notNullable().defaultTo('');
+    table.string('Ticker').notNullable().defaultTo('');
+    table.string('Price').notNullable().defaultTo('');
+    table.string('Quanity').notNullable().defaultTo('');
+    table.string('COST').notNullable().defaultTo('');
+    table.string('NAV').notNullable().defaultTo('');
+    table.string('PNL').notNullable().defaultTo('');
+    table.string('Benchmark').notNullable().defaultTo('');
   });
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('totals');
+  return knex.schema.dropTable('data');
 };
