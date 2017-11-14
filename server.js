@@ -10,13 +10,13 @@ app.use(function(req, res, next) {
 });
 
 app.get('/data', function (req, res) {
-  return knex('totals').select('*')
+  return knex('data').select('*')
   .then((data) => {
     delete data[0].id;
     // var fields = ["bond","equities","fx","fxoptions","swaps"]
     let results = '"name","number"\n"bond",5606300\n"equities",401030\n"fx",15266300\n"fxoptions",2147600\n"swaps",468300\n'
     // var result = json2csv({ data: data, fields: fields});
-    return res.status(200).send(results);
+    return res.status(200).send(data);
   })
 })
 
